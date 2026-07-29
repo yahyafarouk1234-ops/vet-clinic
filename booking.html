@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>احجز موعد | عيادة الحياة البيطرية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">🐾</span>
+      <span class="brand-name">عيادة الحياة البيطرية</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html#about">عن الدكتور</a>
+      <a href="index.html#services">الخدمات</a>
+      <a href="index.html#contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<section class="booking-section">
+  <div class="container booking-inner">
+    <div class="booking-intro">
+      <span class="eyebrow">احجز موعدك</span>
+      <h1>احجز كشف لحيوانك الأليف</h1>
+      <p>املأ البيانات وهيتواصل معاك فريق العيادة لتأكيد الموعد.</p>
+    </div>
+
+    <form id="bookingForm" class="booking-form" novalidate>
+      <div class="form-row">
+        <label for="ownerName">اسم صاحب الحيوان</label>
+        <input type="text" id="ownerName" name="ownerName" required placeholder="مثال: أحمد محمد">
+      </div>
+
+      <div class="form-row">
+        <label for="petName">اسم الحيوان</label>
+        <input type="text" id="petName" name="petName" required placeholder="مثال: لوسي">
+      </div>
+
+      <div class="form-row-split">
+        <div class="form-row">
+          <label for="petType">النوع</label>
+          <select id="petType" name="petType" required>
+            <option value="">اختر النوع</option>
+            <option value="قط">قط 🐱</option>
+            <option value="كلب">كلب 🐶</option>
+            <option value="طائر">طائر 🐦</option>
+            <option value="أرنب">أرنب 🐰</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="petAge">العمر</label>
+          <input type="text" id="petAge" name="petAge" required placeholder="مثال: سنتين / 6 شهور">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="problem">المشكلة أو سبب الزيارة</label>
+        <textarea id="problem" name="problem" rows="3" required placeholder="اكتب وصف مختصر للحالة..."></textarea>
+      </div>
+
+      <div class="form-row-split">
+        <div class="form-row">
+          <label for="date">التاريخ</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-row">
+          <label for="time">الوقت</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="photo">صورة للحيوان قبل الكشف (اختياري)</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+        <div id="photoPreview" class="photo-preview"></div>
+      </div>
+
+      <button type="submit" class="btn btn-accent btn-lg" style="width:100%;justify-content:center;">
+        تأكيد الحجز
+      </button>
+    </form>
+
+    <div id="confirmation" class="confirmation" hidden>
+      <div class="confirmation-icon">✓</div>
+      <h2>تم استلام حجزك</h2>
+      <p>هيتم التواصل معاك لتأكيد الموعد. تقدر كمان تكلمنا مباشرة على واتساب.</p>
+      <a href="https://wa.me/201286740702" target="_blank" class="btn btn-outline btn-lg">💬 واتساب العيادة</a>
+      <a href="index.html" class="btn btn-primary btn-lg">الرجوع للصفحة الرئيسية</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 عيادة الحياة البيطرية — د. محمد أشرف · <a href="dashboard.html" class="admin-link">لوحة الدكتور</a></p>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/store.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

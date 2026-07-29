@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة الدكتور | عيادة الحياة البيطرية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">🐾</span>
+      <span class="brand-name">عيادة الحياة البيطرية — لوحة الدكتور</span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ Password Gate ============ -->
+<section class="gate" id="gate">
+  <div class="container gate-inner">
+    <div class="gate-card">
+      <h2>دخول لوحة التحكم</h2>
+      <p>الصفحة دي خاصة بالدكتور فقط.</p>
+      <input type="password" id="gatePassword" placeholder="كلمة المرور">
+      <button id="gateBtn" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">دخول</button>
+      <p id="gateError" class="gate-error" hidden>كلمة المرور غلط، حاول تاني.</p>
+      <p class="gate-hint">(كلمة المرور الافتراضية: vet2026 — غيّرها من js/dashboard.js)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Dashboard ============ -->
+<section class="dashboard" id="dashboard" hidden>
+  <div class="container">
+    <div class="section-head" style="text-align:right;">
+      <span class="eyebrow">الحجوزات</span>
+      <h2>مواعيد اليوم وكل الحجوزات</h2>
+    </div>
+
+    <div id="bookingsTableWrap">
+      <table class="bookings-table" id="bookingsTable">
+        <thead>
+          <tr>
+            <th>التاريخ</th>
+            <th>الوقت</th>
+            <th>صاحب الحيوان</th>
+            <th>الحيوان</th>
+            <th>النوع</th>
+            <th>المشكلة</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="bookingsBody"></tbody>
+      </table>
+      <p id="noBookings" class="no-bookings" hidden>لا يوجد حجوزات لسه.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Pet File Modal ============ -->
+<div class="modal-overlay" id="petModalOverlay" hidden>
+  <div class="modal-card">
+    <button class="modal-close" id="petModalClose">✕</button>
+    <div id="petModalContent"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 عيادة الحياة البيطرية — د. محمد أشرف</p>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/store.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
